@@ -1,3 +1,11 @@
+* {
+  user-select: none;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
 html {
   font-family: "Open Sans", sans-serif;
   box-sizing: border-box;
@@ -21,10 +29,11 @@ body {
   flex-direction: column;
   text-align: center;
   text-transform: uppercase;
+  cursor: default;
 }
 
 .pricing-plan {
-  border-bottom: 1 px solid rgba(204, 161, 21, 0.3);
+  border-bottom: 1px solid rgba(204, 161, 21, 0.3);
 }
 
 .pricing-plan:last-child {
@@ -33,8 +42,10 @@ body {
 
 .pricing-img {
   margin-bottom: 25px;
-  width: 100%;
-  max-width: 100%;
+  /* width: 100%;
+  max-width: 100%; */
+  width: 50%;
+  max-width: 50%;
 }
 
 .pricing-header {
@@ -67,3 +78,44 @@ body {
   font-size: 32px;
   font-weight: 700;
 }
+
+.pricing-button {
+  border: 1px solid rgba(204, 161, 21, 0.76);
+  border-radius: 10px;
+  color: rgba(204, 161, 21, 0.76);
+  display: inline-block;
+  padding: 15px 35px;
+  text-decoration: none;
+  margin: 25px 0;
+  transition: background-color 200ms ease-in-out;
+}
+
+.pricing-button:hover,
+.pricing-button:focus {
+  background-color: rgba(204, 161, 21, 0.3);
+}
+
+.pricing-button.is-featured {
+  background-color: rgba(255, 196, 0, 0.623);
+  color: white;
+}
+
+.pricing-button.is-featured:hover,
+.pricing-button.is-featured:focus {
+  background-color: rgba(189, 145, 2, 0.623);
+  color: white;
+}
+
+@media (min-width: 900px) {
+  .panel {
+    flex-direction: row;
+  }
+  .pricing-plan {
+    border-bottom: none;
+    border-right: 1px solid rgba(204, 161, 21, 0.3);
+    padding: 25px 50px;
+  }
+  .pricing-plan:last-child {
+    border-right: none;
+  }
+} ;
